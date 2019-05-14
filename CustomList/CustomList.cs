@@ -8,7 +8,12 @@ namespace CustomList
 {
     public class CustomList<T>
     {
-        T[] items = new T[1];
+        T[] items = new T[4];
 
+        public T this[int i]
+        {
+            get { return items[i]; }
+            set { items[i] = value; }
+        }
     }
 }
