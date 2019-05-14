@@ -122,5 +122,28 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+
+        [TestMethod]
+        public void Count_CheckigTheAmountOfVariablesInArray_CheckingCountInStringArray()
+        {
+            //arrange
+            CustomList<string> shawnList = new CustomList<string>();
+            string words;
+            int actual;
+            int expected;
+
+            //act
+            words = "Hello";
+            shawnList.Add(words);
+            shawnList.Count();
+            actual = shawnList.Count();
+            expected = 1;
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+        }
     }
 }
