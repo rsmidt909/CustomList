@@ -87,5 +87,27 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Remove_CheckingIfDesiredVariableWasRemoved_CheckingIfAbleToRemoveString()
+        {
+            //arrange
+            CustomList<string> shawnList = new CustomList<string>();
+            string words;
+            int actual;
+            int expected;
+
+            //act
+            words = "Hello";
+            shawnList.Add(words);
+            shawnList.remove();
+            actual = shawnList[0];
+            expected = 0;
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+        }
     }
 }
