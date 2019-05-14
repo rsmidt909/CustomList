@@ -14,17 +14,19 @@ namespace CustomListTest
             //Arrange
             CustomList<int> shawnList = new CustomList<int>();
             int value = 26;
-
+            int expected;
+            int actual;
 
 
             //Act
             shawnList.Add(value);
-
+            actual = shawnList[0];
+            expected = value;
 
 
 
             //Assert
-            Assert.AreEqual(value, shawnList[0]);
+            Assert.AreEqual(expected, actual);
 
 
 
@@ -37,16 +39,18 @@ namespace CustomListTest
             CustomList<int> shawnList = new CustomList<int>();
             int value = 26;
             int value2 = 30;
-
+            int expected;
+            int actual;
 
 
             //Act
             shawnList.Add(value);
             shawnList.Add(value2);
-
+            actual = shawnList[0];
+            expected = value;
 
             //Assert
-            Assert.AreEqual(value, shawnList[0]);
+            Assert.AreEqual(expected, actual);
 
 
 
@@ -58,16 +62,18 @@ namespace CustomListTest
             CustomList<int> shawnList = new CustomList<int>();
             int value = 26;
             int value2 = 30;
-
+            int expected;
+            int actual;
 
 
             //Act
             shawnList.Add(value);
             shawnList.Add(value2);
-
+            actual = shawnList[1];
+            expected = value2;
 
             //Assert
-            Assert.AreEqual(value2, shawnList[1]);
+            Assert.AreEqual(expected, actual);
 
 
 
@@ -82,7 +88,8 @@ namespace CustomListTest
             int value3 = 34;
             int value4 = 38;
             int value5 = 42;
-
+            int expected;
+            int actual;
 
 
             //Act
@@ -91,16 +98,36 @@ namespace CustomListTest
             shawnList.Add(value3);
             shawnList.Add(value4);
             shawnList.Add(value5);
-
+            actual = shawnList[4];
+            expected = value5;
 
             //Assert
-            Assert.AreEqual(value5, shawnList[4]);
+            Assert.AreEqual(expected, actual);
 
 
 
         }
         [TestMethod]
-        public void Add_AddingItemsToArrayList_
+        public void Add_AddingStringItemsToArrayList_CheckingToSeeIfStringWasAdded()
+        {
+            //Arrange
+            CustomList<string> shawnList = new CustomList<string>();
+            string words = "Hello";
+            string actual;
+            string expected;
+
+
+            //act
+            shawnList.Add(words);
+            expected = "Hello";
+            actual = shawnList[0];
+
+
+            //assert
+
+            Assert.AreEqual(expected, actual);
+
+        }
 
 
 

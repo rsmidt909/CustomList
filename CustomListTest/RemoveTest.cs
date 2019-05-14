@@ -12,14 +12,17 @@ namespace CustomListTest
         {
             //Arrange
             CustomList<int> shawnList = new CustomList<int>();
+            int expected;
+            int actual;
 
-            
+
             //Act
             shawnList.Remove(shawnList[0]);
-
+            actual = shawnList[0];
+            expected = 0;
 
             //Assert
-            Assert.AreEqual(0, shawnList[0]);
+            Assert.AreEqual(expected, actual);
 
         }
 
@@ -30,10 +33,17 @@ namespace CustomListTest
             CustomList<int> shawnList = new CustomList<int>();
             int value = 26;
             int value2 = 30;
+            int expected;
+            int actual;
+
             //Act
             shawnList.Remove(shawnList[0]);
+            actual = shawnList[0];
+            expected = value2;
+
+
             //Assert
-            Assert.AreEqual(value2, shawnList[0]);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -43,10 +53,17 @@ namespace CustomListTest
             CustomList<int> shawnList = new CustomList<int>();
             int value = 26;
             int value2 = 30;
+            int expected;
+            int actual;
+
+
             //Act
             shawnList.Remove(shawnList[1]);
+            actual = shawnList[0];
+            expected = value;
+
             //Assert
-            Assert.AreEqual(value, shawnList[0]);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -59,11 +76,16 @@ namespace CustomListTest
             int value3 = 34;
             int value4 = 38;
             int value5 = 42;
+            int expected;
+            int actual;
+
             //Act
             shawnList.Remove(shawnList[0]);
-            
+            actual = shawnList[0];
+            expected = value2;
+
             //Assert
-            Assert.AreEqual(value2, shawnList[0]);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
