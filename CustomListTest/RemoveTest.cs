@@ -144,5 +144,50 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void Remove_RemovingItemFromArray_RemovingOneItemWithMultipleCopiesOfSameValueCheckingZeroIndex()
+        {
+            //arrange
+            CustomList<int> shawnList = new CustomList<int>();
+            int value;
+            int expected;
+            int actual;
+
+            //act
+            value = 5;
+            shawnList.Add(5);
+            shawnList.Add(5);
+            shawnList.Add(5);
+            shawnList.Remove(5);
+            expected = 5;
+            actual = shawnList[0];
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Remove_RemovingItemFromArray_RemovingOneItemWithMultipleCopiesOfSameValueCheckingFirstIndex()
+        {
+            //arrange
+            CustomList<int> shawnList = new CustomList<int>();
+            int value;
+            int expected;
+            int actual;
+
+            //act
+            value = 5;
+            shawnList.Add(5);
+            shawnList.Add(5);
+            shawnList.Add(5);
+            shawnList.Remove(5);
+            expected = 5;
+            actual = shawnList[1];
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

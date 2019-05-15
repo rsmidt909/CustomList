@@ -57,7 +57,7 @@ namespace CustomList
             ResetCapacityQuestion();
 
         }
-
+        
         public void Remove(T value)
         {
             CheckCapacity();
