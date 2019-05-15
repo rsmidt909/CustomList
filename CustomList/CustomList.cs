@@ -15,7 +15,8 @@ namespace CustomList
         int capacityCounter;
         int arrayCounter;
         int lengthCounter;
-        Nullable<int> z = null;
+        int items2Counter;
+        int arrayRemoveCounter;
 
 
 
@@ -25,13 +26,14 @@ namespace CustomList
             capacity = 4;
             capacityCounter = 0;
             arrayCounter = 0;
+            items2Counter = 0;
+            arrayRemoveCounter = 0;
         }
         public int Length()
         {
             foreach (T value in items)
-            {
-                lengthCounter++;
-
+            {                       
+                    lengthCounter++;             
             }
             return lengthCounter;
         }
@@ -48,23 +50,30 @@ namespace CustomList
             IncreaseCapacity();
             CreateNewArray();
             CopyContents();
-            RenameArray();
-            ResetCapacityQuestion();
+            RenameArray();                     
             items[arrayCounter] = value;
+            ResetItems2Counter();
             AddArrayCounter();
-                                       
+            ResetCapacityQuestion();
+
         }
 
         public void Remove(T value)
         {
-            for(int i = 0; i <= arrayCounter; i++)
-            {
-                if(items[i].Equals(value) == true)
-                {
-                   items[i] = default;
-                }
-            }
+            CheckCapacity();
+            IncreaseCapacity();
+            CreateNewArray();
+            CopyContents();
+            RenameArray();
+            ResetCapacityQuestion();
+            ResetItems2Counter();
+            Length();
+            FindingRemoveValue(value);
+            VariableShift();
+
+            //RemovingValue(value);
             RemoveArrayCounter();
+
         }
         //----------------------------------------------------------------------------------------------------
         private void CheckCapacity()
@@ -95,7 +104,7 @@ namespace CustomList
             {
                 foreach (T value in items)
                 {
-                    int items2Counter = 0;
+                    
                     items2[items2Counter] = items[items2Counter];
                     items2Counter++;
                 }
@@ -120,11 +129,43 @@ namespace CustomList
             arrayCounter++;
         }
 
+        public void AddArrayRemoveCounter()
+        {
+            arrayCounter++;
+        }
+
+        public void ResetItems2Counter()
+        {
+            items2Counter = 0;
+        }
+        public void ResetArrayRemoveCounter()
+        {
+            arrayCounter = 0;
+        }
+
         public void RemoveArrayCounter()
         {
             arrayCounter--;
         }
 
+        public void FindingRemoveValue(T value)
+        {
+            for (int i = 0; i <= arrayCounter; i++, arrayRemoveCounter++)
+            {
+                if (items[i].Equals(value) == true)
+                {                   
+                    break;
+                }
+            }            
+        }
+
+        public void VariableShift()
+        {
+            for(int i =(arrayRemoveCounter+2); i <= lengthCounter;i++,arrayRemoveCounter++)
+            {
+                items[arrayRemoveCounter] = items[arrayRemoveCounter + 1];
+            }
+        }
 
     }
 }

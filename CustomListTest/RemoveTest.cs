@@ -41,7 +41,7 @@ namespace CustomListTest
             //Act
             shawnList.Add(value);
             shawnList.Add(value2);
-            shawnList.Remove(shawnList[0]);
+            shawnList.Remove(26);
             actual = shawnList[0];
             expected = value2;
 
@@ -64,7 +64,7 @@ namespace CustomListTest
             //Act
             shawnList.Add(value);
             shawnList.Add(value2);
-            shawnList.Remove(shawnList[1]);
+            shawnList.Remove(30);
             actual = shawnList[0];
             expected = value;
 
@@ -99,14 +99,14 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
         }
 
-       /* [TestMethod]
+        [TestMethod]
         public void Remove_CheckingIfDesiredVariableWasRemoved_CheckingIfAbleToRemoveString()
         {
             //arrange
             CustomList<string> shawnList = new CustomList<string>();
             string words;
-            int actual;
-            int expected;
+            string actual;
+            string expected;
 
             //act
             words = "Hello";
@@ -119,6 +119,6 @@ namespace CustomListTest
             //assert
             Assert.AreEqual(expected, actual);
 
-        }*/
+        }
     }
 }
