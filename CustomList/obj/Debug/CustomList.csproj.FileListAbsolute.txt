@@ -1,0 +1,7 @@
+C:\Users\rsmid\Desktop\dev\c#\CustomList\CustomList\bin\Debug\CustomList.exe.config
+C:\Users\rsmid\Desktop\dev\c#\CustomList\CustomList\bin\Debug\CustomList.exe
+C:\Users\rsmid\Desktop\dev\c#\CustomList\CustomList\bin\Debug\CustomList.pdb
+C:\Users\rsmid\Desktop\dev\c#\CustomList\CustomList\obj\Debug\CustomList.csprojAssemblyReference.cache
+C:\Users\rsmid\Desktop\dev\c#\CustomList\CustomList\obj\Debug\CustomList.csproj.CoreCompileInputs.cache
+C:\Users\rsmid\Desktop\dev\c#\CustomList\CustomList\obj\Debug\CustomList.exe
+C:\Users\rsmid\Desktop\dev\c#\CustomList\CustomList\obj\Debug\CustomList.pdb

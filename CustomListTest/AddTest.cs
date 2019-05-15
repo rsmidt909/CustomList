@@ -21,7 +21,7 @@ namespace CustomListTest
             //Act
             shawnList.Add(value);
             actual = shawnList[0];
-            expected = value;
+            expected = 26;
 
 
 
@@ -47,7 +47,7 @@ namespace CustomListTest
             shawnList.Add(value);
             shawnList.Add(value2);
             actual = shawnList[0];
-            expected = value;
+            expected = 26;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -70,7 +70,7 @@ namespace CustomListTest
             shawnList.Add(value);
             shawnList.Add(value2);
             actual = shawnList[1];
-            expected = value2;
+            expected = 30;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -99,7 +99,7 @@ namespace CustomListTest
             shawnList.Add(value4);
             shawnList.Add(value5);
             actual = shawnList[4];
-            expected = value5;
+            expected = 42;
 
             //Assert
             Assert.AreEqual(expected, actual);
