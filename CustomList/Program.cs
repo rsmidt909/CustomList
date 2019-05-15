@@ -11,7 +11,12 @@ namespace CustomList
         static void Main(string[] args)
         {
             CustomList<int> shawnList = new CustomList<int>();
-
+            shawnList.Add(4);
+            shawnList.Add(8);
+            shawnList.Add(12);
+            shawnList.Add(16);
+            shawnList.Add(20);
+            Console.ReadLine();
         }
     }
 }

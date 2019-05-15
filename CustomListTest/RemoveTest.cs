@@ -4,7 +4,7 @@ using CustomList;
 
 namespace CustomListTest
 {
-    [TestClass]
+    /*[TestClass]
     public class RemoveTest
     {
         [TestMethod]
@@ -109,5 +109,5 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
 
         }
-    }
+    }*/
 }

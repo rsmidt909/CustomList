@@ -9,10 +9,11 @@ namespace CustomList
     public class CustomList<T>
     {
         T[] items = new T[4]; // generic array called items, instantiating and sets 4 spaces in arrray == null
-        T[] items2;
+        public T[] items2;
         bool capacityQuestion;
         int capacity;
         int capacityCounter;
+        int arrayCounter;
         int lengthCounter;
 
 
@@ -23,6 +24,7 @@ namespace CustomList
            capacityQuestion = false;
             capacity = 4;
             capacityCounter = 0;
+            arrayCounter = 0;
         }
         public int Length()
         {
@@ -47,23 +49,15 @@ namespace CustomList
             CreateNewArray();
             CopyContents();
             RenameArray();
-
-
-            for (int i = 0; i < Length(); i++)
-            {
-                CheckCapacity();
-                if (items[i] == null)
-                {
-                    items[i] = value;
-                    break;
-                }
-            }                 
-           
+            ResetCapacityQuestion();
+            items[arrayCounter] = value;
+            AddArrayCounter();
+                                       
         }
         //----------------------------------------------------------------------------------------------------
         private void CheckCapacity()
         {  
-            if(items[Length()] != null)
+            if(arrayCounter==capacity)
             {
                 capacityQuestion = true;
             }
@@ -79,23 +73,40 @@ namespace CustomList
         {
             if(capacityQuestion == true)
             {
-                T[] items2 = new T[capacity];
+                items2 = new T[capacity];
             }
         }
         
         private void CopyContents()
         {
-            foreach (T value in items)
+            if (capacityQuestion == true)
             {
-                int items2Counter = 0;
-                items2[items2Counter] = items[items2Counter];
-                items2Counter++;
+                foreach (T value in items)
+                {
+                    int items2Counter = 0;
+                    items2[items2Counter] = items[items2Counter];
+                    items2Counter++;
+                }
             }
         }
 
         public void RenameArray()
-        {
-            items = items2;
+        {   if (capacityQuestion == true)
+            {
+                items = items2;
+            }
         }
+
+        private void ResetCapacityQuestion()
+        {
+            capacityQuestion = false;
+        }
+
+
+        public void AddArrayCounter()
+        {
+            arrayCounter++;
+        }
+
     }
 }
