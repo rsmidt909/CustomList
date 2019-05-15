@@ -15,7 +15,7 @@ namespace CustomList
         int capacityCounter;
         int arrayCounter;
         int lengthCounter;
-
+        Nullable<int> z = null;
 
 
 
@@ -53,6 +53,18 @@ namespace CustomList
             items[arrayCounter] = value;
             AddArrayCounter();
                                        
+        }
+
+        public void Remove(T value)
+        {
+            for(int i = 0; i <= arrayCounter; i++)
+            {
+                if(items[i].Equals(value) == true)
+                {
+                   items[i] = default;
+                }
+            }
+            RemoveArrayCounter();
         }
         //----------------------------------------------------------------------------------------------------
         private void CheckCapacity()
@@ -107,6 +119,12 @@ namespace CustomList
         {
             arrayCounter++;
         }
+
+        public void RemoveArrayCounter()
+        {
+            arrayCounter--;
+        }
+
 
     }
 }

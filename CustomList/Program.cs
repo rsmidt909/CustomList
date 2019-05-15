@@ -16,6 +16,8 @@ namespace CustomList
             shawnList.Add(12);
             shawnList.Add(16);
             shawnList.Add(20);
+            shawnList.Remove(8);
+            shawnList.Add(10);
             Console.ReadLine();
         }
     }

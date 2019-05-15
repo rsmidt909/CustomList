@@ -4,7 +4,7 @@ using CustomList;
 
 namespace CustomListTest
 {
-    /*[TestClass]
+    [TestClass]
     public class RemoveTest
     {
         [TestMethod]
@@ -12,14 +12,16 @@ namespace CustomListTest
         {
             //Arrange
             CustomList<int> shawnList = new CustomList<int>();
+            int value = 15;
             int expected;
             int actual;
 
 
             //Act
-            shawnList.Remove(shawnList[0]);
+            shawnList.Add(value);
+            shawnList.Remove(value);
             actual = shawnList[0];
-            expected = 0;
+            expected = default;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -37,6 +39,8 @@ namespace CustomListTest
             int actual;
 
             //Act
+            shawnList.Add(value);
+            shawnList.Add(value2);
             shawnList.Remove(shawnList[0]);
             actual = shawnList[0];
             expected = value2;
@@ -58,6 +62,8 @@ namespace CustomListTest
 
 
             //Act
+            shawnList.Add(value);
+            shawnList.Add(value2);
             shawnList.Remove(shawnList[1]);
             actual = shawnList[0];
             expected = value;
@@ -80,6 +86,11 @@ namespace CustomListTest
             int actual;
 
             //Act
+            shawnList.Add(value);
+            shawnList.Add(value2);
+            shawnList.Add(value3);
+            shawnList.Add(value4);
+            shawnList.Add(value5);
             shawnList.Remove(shawnList[0]);
             actual = shawnList[0];
             expected = value2;
@@ -88,7 +99,7 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
+       /* [TestMethod]
         public void Remove_CheckingIfDesiredVariableWasRemoved_CheckingIfAbleToRemoveString()
         {
             //arrange
@@ -100,14 +111,14 @@ namespace CustomListTest
             //act
             words = "Hello";
             shawnList.Add(words);
-            shawnList.remove();
+            shawnList.Remove("Hello");
             actual = shawnList[0];
-            expected = 0;
+            expected = null;
 
 
             //assert
             Assert.AreEqual(expected, actual);
 
-        }
-    }*/
+        }*/
+    }
 }
