@@ -43,7 +43,7 @@ namespace CustomListTest
             shawnList.Add(value2);
             shawnList.Remove(26);
             actual = shawnList[0];
-            expected = value2;
+            expected = 30;
 
 
             //Assert
@@ -66,7 +66,7 @@ namespace CustomListTest
             shawnList.Add(value2);
             shawnList.Remove(30);
             actual = shawnList[0];
-            expected = value;
+            expected = 26;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -93,7 +93,7 @@ namespace CustomListTest
             shawnList.Add(value5);
             shawnList.Remove(shawnList[0]);
             actual = shawnList[0];
-            expected = value2;
+            expected = 30;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -120,5 +120,29 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
 
         }
+
+        [TestMethod]
+        public void Remove_RemovingItemFromArray_RemovingOneItemWithMultipleCopiesOfSameValue()
+        {
+            //arrange
+            CustomList<int> shawnList = new CustomList<int>();
+            int value;
+            int expected;
+            int actual;
+
+            //act
+            value = 5;
+            shawnList.Add(5);
+            shawnList.Add(5);
+            shawnList.Add(5);
+            shawnList.Remove(5);
+            expected = default;
+            actual = shawnList[2];
+
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }

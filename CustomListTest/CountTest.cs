@@ -130,8 +130,8 @@ namespace CustomListTest
             //arrange
             CustomList<string> shawnList = new CustomList<string>();
             string words;
-            int actual;
-            int expected;
+            string actual;
+            string expected;
 
             //act
             words = "Hello";
