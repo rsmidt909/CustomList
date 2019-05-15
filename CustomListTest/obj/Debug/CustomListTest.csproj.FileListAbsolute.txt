@@ -1,0 +1,2 @@
+C:\Users\rsmid\Desktop\dev\c#\CustomList\CustomListTest\obj\Debug\CustomListTest.csprojAssemblyReference.cache
+C:\Users\rsmid\Desktop\dev\c#\CustomList\CustomListTest\obj\Debug\CustomListTest.csproj.CoreCompileInputs.cache

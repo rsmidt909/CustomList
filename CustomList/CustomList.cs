@@ -9,11 +9,29 @@ namespace CustomList
     public class CustomList<T>
     {
         T[] items = new T[4]; // generic array called items, instantiating and sets 4 spaces in arrray == null
-
+        T[] items2;
         bool capacityQuestion;
+        int capacity;
+        int capacityCounter;
+        int lengthCounter;
+
+
+
+
         public CustomList()
         {
            capacityQuestion = false;
+            capacity = 4;
+            capacityCounter = 0;
+        }
+        public int Length()
+        {
+            foreach (T value in items)
+            {
+                lengthCounter++;
+
+            }
+            return lengthCounter;
         }
 
         public T this[int i] // generic THIS instance of array with an int variable labeled i
@@ -24,8 +42,14 @@ namespace CustomList
         
         public void Add(T value)
         {
+            CheckCapacity();
+            IncreaseCapacity();
+            CreateNewArray();
+            CopyContents();
+            RenameArray();
 
-            for (int i = 0; i < items.Length; i++)
+
+            for (int i = 0; i < Length(); i++)
             {
                 CheckCapacity();
                 if (items[i] == null)
@@ -36,20 +60,42 @@ namespace CustomList
             }                 
            
         }
-
+        //----------------------------------------------------------------------------------------------------
         private void CheckCapacity()
-        {
-            if(items[items.Length] != null)
+        {  
+            if(items[Length()] != null)
             {
                 capacityQuestion = true;
             }
         }
-        
-        private void ExpandCapaciity()
+        private void IncreaseCapacity()
         {
-            if()
+            if(capacityQuestion == true)
+            {
+                capacity *= 2;
+            }
+        }
+        public void CreateNewArray()
+        {
+            if(capacityQuestion == true)
+            {
+                T[] items2 = new T[capacity];
+            }
         }
         
+        private void CopyContents()
+        {
+            foreach (T value in items)
+            {
+                int items2Counter = 0;
+                items2[items2Counter] = items[items2Counter];
+                items2Counter++;
+            }
+        }
 
+        public void RenameArray()
+        {
+            items = items2;
+        }
     }
 }
