@@ -79,8 +79,8 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
         }
 
-        /*[TestMethod]
-        public void TToString_ConvertingDesiredValueToString_CheckingIfDefaultValueReturnedIsAString()
+        [TestMethod]
+        public void ToStringMimic_ConvertingDesiredValueToString_CheckingIfLargeValueReturnedIsAStringAfterRemoving()
         {
             //arrange
             CustomList<int> shawnList = new CustomList<int>();
@@ -88,11 +88,17 @@ namespace CustomListTest
             string expected;
             //act
             shawnList.Add(5);
-            shawnList.ToString(shawnList[2]);
-            actual = shawnList.ToString(shawnList[2]);
-            expected = "0";
+            shawnList.Add(5);
+            shawnList.Add(5);
+            shawnList.Add(5);
+            shawnList.Add(5);
+            shawnList.Add(5);
+            shawnList.Remove(5);
+            shawnList.ToStringMimic();
+            actual = shawnList.ToStringMimic();
+            expected = "5, 5, 5, 5, 5";
             //assert
             Assert.AreEqual(expected, actual);
-        }*/
+        }
     }
 }

@@ -94,6 +94,12 @@ namespace CustomList
             return collection;
                       
         }
+
+        public int Count()
+        {
+            int number = 0;
+            return number;
+        }
         //----------------------------------------------------------------------------------------------------
         private void CheckCapacity()
         {  
