@@ -78,19 +78,22 @@ namespace CustomList
         }
 
         public string ToStringMimic()
-        {           
+        {
+            ResetCollection();
             foreach (T value in items)
             {
-                if (collection == null)
-                    {
+                if (collection == null){
                     collection += value.ToString();
                     }
-                        else
-                            {
-                            collection += string.Format(", {0}", value);
-                            }
+                        else if  (value == default){
+                                string DoNothing = "DoNothing";
+                                }
+                                        else
+                                            {
+                                            collection += string.Format(", {0}", value);
+                                            }
             }
-            return collection;
+            return collection;          
         }
         //----------------------------------------------------------------------------------------------------
         private void CheckCapacity()
@@ -185,6 +188,10 @@ namespace CustomList
             }
         }
         
+        public void ResetCollection()
+        {
+            collection = null;
+        }
        
     }
 }
