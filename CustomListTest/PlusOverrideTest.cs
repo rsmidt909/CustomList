@@ -23,7 +23,7 @@ namespace CustomListTest
             shawnList2.Add(8);
             CustomList<int> List3 = shawnList + shawnList2;
             expected =
-            actual = ;
+            actual = List3;
             //Assert
             Assert.AreEqual(expected, actual);
         }

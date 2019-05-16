@@ -202,7 +202,16 @@ namespace CustomList
         public static CustomList<T> operator +(CustomList<T> FirstList, CustomList<T> SecondList)
         {
             CustomList<T> ThirdList = new CustomList<T>();
+            int spareCounter = 0;
+            for (int i = 0; i < (FirstList.arrayCounter & SecondList.arrayCounter); i++)
+            {
+                ThirdList[i] = FirstList[i];
+                spareCounter++;
+                ThirdList[spareCounter] = SecondList[i];
+                spareCounter++;
 
+            }
+            return ThirdList;
         }
         
 
