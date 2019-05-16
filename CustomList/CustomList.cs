@@ -18,6 +18,7 @@ namespace CustomList
         int items2Counter;
         int arraySpecificCounter;
         string collection;
+        public int Count { get { return arrayCounter; } }
 
 
 
@@ -30,6 +31,8 @@ namespace CustomList
             items2Counter = 0;
             arraySpecificCounter = 0;
             collection = null;
+           
+            
         }
         public int Length()
         {
@@ -95,11 +98,7 @@ namespace CustomList
                       
         }
 
-        public int Count()
-        {
-            int number = 0;
-            return number;
-        }
+        
         //----------------------------------------------------------------------------------------------------
         private void CheckCapacity()
         {  

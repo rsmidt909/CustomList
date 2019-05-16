@@ -18,9 +18,8 @@ namespace CustomListTest
             int actual;
 
             //Act
-            shawnList.Add(value);
-            shawnList.Count();
-            actual = shawnList.Count();
+            shawnList.Add(value);           
+            actual = shawnList.Count;
             expected = 1;
 
             //Assert
@@ -39,8 +38,7 @@ namespace CustomListTest
 
 
             //Act
-            shawnList.Count();
-            actual = shawnList.Count();
+            actual = shawnList.Count;
             expected = 0;
 
             //Assert
@@ -61,8 +59,8 @@ namespace CustomListTest
             //Act
             shawnList.Add(value);
             shawnList.Remove(shawnList[0]);
-            shawnList.Count();
-            actual = shawnList.Count();
+
+            actual = shawnList.Count;
             expected = 0;
 
             //Assert
@@ -85,8 +83,7 @@ namespace CustomListTest
             shawnList.Add(value);
             shawnList.Add(value2);
             shawnList.Remove(shawnList[1]);
-            shawnList.Count();
-            actual = shawnList.Count();
+            actual = shawnList.Count;
             expected = 1;
 
             //Assert
@@ -114,8 +111,7 @@ namespace CustomListTest
             shawnList.Add(value3);
             shawnList.Add(value4);
             shawnList.Add(value5);
-            shawnList.Count();
-            actual = shawnList.Count();
+            actual = shawnList.Count;
             expected = 5;
 
 
@@ -136,8 +132,7 @@ namespace CustomListTest
             //act
             words = "Hello";
             shawnList.Add(words);
-            shawnList.Count();
-            actual = shawnList.Count();
+            actual = shawnList.Count;
             expected = 1;
 
 
