@@ -18,8 +18,8 @@ namespace CustomListTest
             shawnList.Add(5);
             shawnList.Add(5);
             shawnList.Add(5);
-            shawnList.ToStringMimic();
-            actual = shawnList.ToStringMimic();
+            shawnList.ToString();
+            actual = shawnList.ToString();
             expected = "5, 5, 5";
             //assert
             Assert.AreEqual(expected, actual);
@@ -35,8 +35,8 @@ namespace CustomListTest
             //act
             shawnList.Add("5");
             shawnList.Add("5");
-            shawnList.ToStringMimic();
-            actual = shawnList.ToStringMimic();
+            shawnList.ToString();
+            actual = shawnList.ToString();
             expected = "5, 5";
             //assert
             Assert.AreEqual(expected, actual);
@@ -56,8 +56,8 @@ namespace CustomListTest
             shawnList.Add(8);
             shawnList.Add(9);
             shawnList.Add(10);
-            shawnList.ToStringMimic();
-            actual = shawnList.ToStringMimic();
+            shawnList.ToString();
+            actual = shawnList.ToString();
             expected = "5, 6, 7, 8, 9, 10";
             //assert
             Assert.AreEqual(expected, actual);
@@ -72,8 +72,8 @@ namespace CustomListTest
             string expected;
             //act
             shawnList.Add("5");
-            shawnList.ToStringMimic();
-            actual = shawnList.ToStringMimic();
+            shawnList.ToString();
+            actual = shawnList.ToString();
             expected = "5";
             //assert
             Assert.AreEqual(expected, actual);
@@ -94,8 +94,8 @@ namespace CustomListTest
             shawnList.Add(5);
             shawnList.Add(5);
             shawnList.Remove(5);
-            shawnList.ToStringMimic();
-            actual = shawnList.ToStringMimic();
+            shawnList.ToString();
+            actual = shawnList.ToString();
             expected = "5, 5, 5, 5, 5";
             //assert
             Assert.AreEqual(expected, actual);

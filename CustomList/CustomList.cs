@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomList
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable
     {
         T[] items = new T[4]; // generic array called items, instantiating and sets 4 spaces in arrray == null
         public T[] items2;
@@ -82,7 +83,7 @@ namespace CustomList
             
         }
 
-        public string ToStringMimic()
+        public override string ToString()
         {
             ResetCollection();
             for(int i = 0; i < arrayCounter; i++)
@@ -199,17 +200,30 @@ namespace CustomList
             collection = null;
         }
 
+        public IEnumerator GetEnumerator()
+        {
+            for(int index = 0; index <items.Length; index++)
+            {
+                yield return items[index];
+            }
+        }
+
         public static CustomList<T> operator +(CustomList<T> FirstList, CustomList<T> SecondList)
         {
-            CustomList<T> ThirdList = new CustomList<T>();
-            int spareCounter = 0;
+            CustomList<T> ThirdList = new CustomList<T>();            
             for (int i = 0; i < (FirstList.arrayCounter & SecondList.arrayCounter); i++)
             {
-                ThirdList[i] = FirstList[i];
-                spareCounter++;
-                ThirdList[spareCounter] = SecondList[i];
-                spareCounter++;
+                if (i < FirstList.arrayCounter)
+                {
+                    ThirdList.Add(FirstList[i]);
+                    
+                }
 
+                if (i < SecondList.arrayCounter)
+                {
+                    ThirdList.Add(SecondList[i]);
+                    
+                }
             }
             return ThirdList;
         }
