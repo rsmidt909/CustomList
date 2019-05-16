@@ -80,20 +80,19 @@ namespace CustomList
         public string ToStringMimic()
         {
             ResetCollection();
-            foreach (T value in items)
+            for(int i = 0; i < arrayCounter; i++)
             {
-                if (collection == null){
-                    collection += value.ToString();
-                    }
-                        else if  (value == default){
-                                string DoNothing = "DoNothing";
-                                }
-                                        else
-                                            {
-                                            collection += string.Format(", {0}", value);
-                                            }
+                if(collection == null)
+                {
+                    collection += items[i].ToString();
+                }
+                else
+                {
+                    collection += string.Format(", {0}", items[i]);
+                }
             }
-            return collection;          
+            return collection;
+                      
         }
         //----------------------------------------------------------------------------------------------------
         private void CheckCapacity()

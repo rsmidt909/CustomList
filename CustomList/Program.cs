@@ -19,7 +19,7 @@ namespace CustomList
             shawnList.Remove("8");
             shawnList.Add("10");
             shawnList.ToStringMimic();
-            Console.WriteLine();
+            Console.WriteLine(shawnList.ToStringMimic());
             Console.ReadLine();
         }
     }

@@ -4,7 +4,7 @@ using CustomList;
 
 namespace CustomListTest
 {
-    /*[TestClass]
+    [TestClass]
     public class CountTest
     {
         [TestMethod]
@@ -130,8 +130,8 @@ namespace CustomListTest
             //arrange
             CustomList<string> shawnList = new CustomList<string>();
             string words;
-            string actual;
-            string expected;
+            int actual;
+            int expected;
 
             //act
             words = "Hello";
@@ -145,5 +145,5 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
 
         }
-    }*/
+    }
 }
