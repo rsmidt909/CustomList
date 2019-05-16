@@ -16,7 +16,8 @@ namespace CustomList
         int arrayCounter;
         int lengthCounter;
         int items2Counter;
-        int arrayRemoveCounter;
+        int arraySpecificCounter;
+        string collection;
 
 
 
@@ -27,7 +28,8 @@ namespace CustomList
             capacityCounter = 0;
             arrayCounter = 0;
             items2Counter = 0;
-            arrayRemoveCounter = 0;
+            arraySpecificCounter = 0;
+            collection = null;
         }
         public int Length()
         {
@@ -68,18 +70,34 @@ namespace CustomList
             ResetCapacityQuestion();
             ResetItems2Counter();
             Length();
-            FindingRemoveValue(value);
+            FindingSpecificValue(value);
             VariableShift();
-
-            //RemovingValue(value);
+            ResetArraySpecificCounter();
             RemoveArrayCounter();
+            
+        }
 
+        public string ToStringMimic()
+        {           
+            foreach (T value in items)
+            {
+                if (collection == null)
+                    {
+                    collection += value.ToString();
+                    }
+                        else
+                            {
+                            collection += string.Format(", {0}", value);
+                            }
+            }
+            return collection;
         }
         //----------------------------------------------------------------------------------------------------
         private void CheckCapacity()
         {  
             if(arrayCounter==capacity)
             {
+                
                 capacityQuestion = true;
             }
         }
@@ -138,9 +156,9 @@ namespace CustomList
         {
             items2Counter = 0;
         }
-        public void ResetArrayRemoveCounter()
+        public void ResetArraySpecificCounter()
         {
-            arrayCounter = 0;
+            arraySpecificCounter = 0;
         }
 
         public void RemoveArrayCounter()
@@ -148,9 +166,9 @@ namespace CustomList
             arrayCounter--;
         }
 
-        public void FindingRemoveValue(T value)
+        public void FindingSpecificValue(T value)
         {
-            for (int i = 0; i <= arrayCounter; i++, arrayRemoveCounter++)
+            for (int i = 0; i <= arraySpecificCounter; i++, arraySpecificCounter++)
             {
                 if (items[i].Equals(value) == true)
                 {                   
@@ -161,11 +179,12 @@ namespace CustomList
 
         public void VariableShift()
         {
-            for(int i =(arrayRemoveCounter+2); i <= lengthCounter;i++,arrayRemoveCounter++)
+            for(int i =(arraySpecificCounter + 2); i <= lengthCounter;i++, arraySpecificCounter++)
             {
-                items[arrayRemoveCounter] = items[arrayRemoveCounter + 1];
+                items[arraySpecificCounter] = items[arraySpecificCounter + 1];
             }
         }
-
+        
+       
     }
 }
