@@ -20,6 +20,7 @@ namespace CustomList
         string collection;
         public int Count { get { return arrayCounter; } }
         public int Capacity { get { return capacity; } }
+        private double[,] Thing1 = new double[4,4];
 
 
 
@@ -197,6 +198,15 @@ namespace CustomList
         {
             collection = null;
         }
-       
+
+        public static CustomList<T> operator +(CustomList<T> FirstList, CustomList<T> SecondList)
+        {
+            CustomList<T> ThirdList = new CustomList<T>();
+
+        }
+        
+
+        
+
     }
 }
