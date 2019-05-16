@@ -19,6 +19,7 @@ namespace CustomList
         int arraySpecificCounter;
         string collection;
         public int Count { get { return arrayCounter; } }
+        public int Capacity { get { return capacity; } }
 
 
 
