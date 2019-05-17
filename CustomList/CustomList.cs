@@ -18,6 +18,7 @@ namespace CustomList
         int items2Counter;        
         int arraySpecificCounter;
         string collection;
+        int zeroCounter;
         public int Count { get { return arrayCounter; } }
         public int currentlyOccupiedArray { get { return arrayCounter-1; } }
         public int Capacity { get { return capacity; } }
@@ -33,7 +34,7 @@ namespace CustomList
             items2Counter = 0;
             arraySpecificCounter = 0;
             collection = null;
-            
+            zeroCounter = 0;
            
             
         }
@@ -105,25 +106,34 @@ namespace CustomList
 
         public void Zip(CustomList<T> SecondList)
         {
-            CustomList<T> ThirdList = new CustomList<T>();
-                          
+            CustomList<T> ThirdList = new CustomList<T>();                         
                 for (int i = 0; i <= (currentlyOccupiedArray & SecondList.currentlyOccupiedArray); i++)
                 {
-
-                    if (i < currentlyOccupiedArray)
+                    if (i <= currentlyOccupiedArray)
                     {
                     ThirdList.Add(items[i]);
                     }
-
-                    if (i < SecondList.currentlyOccupiedArray)
+                    if (i <= SecondList.currentlyOccupiedArray)
                     {
                     ThirdList.Add(SecondList[i]);
                     }
-
+                }
+                
+                foreach(T value in items)
+                {
+                    if (zeroCounter <= currentlyOccupiedArray)
+                    {
+                    Remove(items[0]);
+                    }
+                }
+            
+                foreach (T value in ThirdList)
+                {                
+                    Add(ThirdList[arraySpecificCounter]);
+                    arraySpecificCounter++;
                 }
 
-
-            
+            ResetArraySpecificCounter();
         }
 
 
@@ -227,7 +237,7 @@ namespace CustomList
 
         public IEnumerator GetEnumerator()
         {
-            for(int index = 0; index < currentlyOccupiedArray; index++)
+            for(int index = 0; index <= currentlyOccupiedArray; index++)
             {
                 yield return items[index];
             }
@@ -277,7 +287,7 @@ namespace CustomList
         {
             for (int i = 0; i <= currentlyOccupiedArray; i++)
             {
-               
+                items[i] = default;
             }
         }
     }

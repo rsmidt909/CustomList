@@ -12,19 +12,19 @@ namespace CustomList
         {
             CustomList<string> shawnList = new CustomList<string>();
             CustomList<string> shawnList2 = new CustomList<string>();
+            shawnList.Add("2");
             shawnList.Add("4");
+            shawnList.Add("6");
             shawnList.Add("8");
-            shawnList.Add("12");
-            shawnList.Add("16");
-            shawnList.Add("20");
             shawnList.Add("10");
-            shawnList2.Add("4");
-            shawnList.Add("16");
+            shawnList.Remove("2");
             shawnList.Remove("4");
+            shawnList.Remove("6");
             shawnList.Remove("8");
-            shawnList.Remove("16");
-            shawnList.Remove("10");         
-            CustomList<string> shawnList3 = shawnList - shawnList2;
+            shawnList2.Add("9");
+            shawnList.Zip(shawnList2);
+            shawnList.Add("4");
+            Console.WriteLine(shawnList);
             Console.WriteLine();
             Console.ReadLine();
         }
