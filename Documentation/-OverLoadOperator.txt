@@ -1,0 +1,64 @@
+CustomList<T> Overloaded Operator (-)
+
+Syntax:
+CustomList<T> List3 = CustomList<T> List - CustomList<T> List2;
+
+Paramters:
+User must provide a new CustomList<T> of the game type to capture the result.
+The CustomList<T> value to the left of the operator that is intened to be subtracted from. 
+The CustomList<T> value to the right of the operator that is intened to be the subtractor.
+ 
+
+Returns:
+Returns in the new CustomList<T>, the remaining values subtracted from the left CustomList<T>.
+
+Implements:
+-
+
+
+The following example demonstates how to subtract two simple business lists from CustomList<T>
+
+Example:---------------------------------------------
+
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CustomList;
+
+namespace CustomList
+{
+    
+    public class OperatorOverloadExample
+    {
+        
+        public void OperatorOverload_OperatorOverload_DoItemsGetMerged()
+        {
+            //Arrange
+            CustomList<int> List = new CustomList<int>();
+			CustomList<int> List2 = new CustomList<int>();           
+            int expected;
+            int actual;
+
+
+            //Act
+            List.Add(2);
+            List.Add(4);
+            List.Add(6);
+            List2.Add(4);
+            List2.Add(6);
+			CustomList<int> List3 = List + List2
+            actual = Console.WriteLine(List3);
+            expected = (2)
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+		
+		// Expected would log: 2
+		// Actual would log: 2
+--------------------------------------------------------------------------------
+
+Remarks:
+The - operator overloaded, uses 2  CustomList<T> objects, and removes the first instance of the duplicate value from the 
+CustomList<T> on the left side of the operator.
+The return object will have none of the values from CustomList<T>on the right of the operator, as it is the Subtractor, not the Subtractee.

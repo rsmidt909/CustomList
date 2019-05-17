@@ -1,0 +1,63 @@
+CustomList<T> Overloaded Operator (+)
+
+Syntax:
+CustomList<T> List3 = CustomList<T> List + CustomList<T> List2;
+
+Paramters:
+User must provide a new T[] of the game type to capture the result.
+The T[] value to the left of the operator that is intened to be added 
+The T[] value to the right of the operator that is intened to be added 
+ 
+
+Returns:
+Returns in the new array the combination of all values from both given lists.
+
+Implements:
++
+
+
+The following example demonstates how to combine two simple business lists from CustomList<T>
+
+Example:---------------------------------------------
+
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CustomList;
+
+namespace CustomList
+{
+    
+    public class OperatorOverloadExample
+    {
+        
+        public void OperatorOverload_OperatorOverload_DoItemsGetMerged()
+        {
+            //Arrange
+            CustomList<int> List = new CustomList<int>();
+			CustomList<int> List2 = new CustomList<int>();           
+            int expected;
+            int actual;
+
+
+            //Act
+            List.Add(2);
+            List.Add(4);
+            List.Add(6);
+            List2.Add(8);
+            List2.Add(10);
+			CustomList<int> List3 = List + List2
+            actual = Console.WriteLine(List3);
+            expected = (2, 4, 6, 8, 10)
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+		
+		// Expected would log: 2, 4, 6, 8, 10
+		// Actual would log: 2, 4, 6, 8, 10
+--------------------------------------------------------------------------------
+
+Remarks:
+The + operator overloaded uses 2  CustomList<T> objects, and merges them together, starting with the 
+CustomList<T> on the left side of the operator first.
