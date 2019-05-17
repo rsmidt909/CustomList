@@ -21,7 +21,7 @@ namespace CustomList
         public int Count { get { return arrayCounter; } }
         public int currentlyOccupiedArray { get { return arrayCounter-1; } }
         public int Capacity { get { return capacity; } }
-        int counter;
+        
         
 
 
@@ -102,7 +102,31 @@ namespace CustomList
                       
         }
 
-        
+
+        public void Zip(CustomList<T> SecondList)
+        {
+            CustomList<T> ThirdList = new CustomList<T>();
+                          
+                for (int i = 0; i <= (currentlyOccupiedArray & SecondList.currentlyOccupiedArray); i++)
+                {
+
+                    if (i < currentlyOccupiedArray)
+                    {
+                    ThirdList.Add(items[i]);
+                    }
+
+                    if (i < SecondList.currentlyOccupiedArray)
+                    {
+                    ThirdList.Add(SecondList[i]);
+                    }
+
+                }
+
+
+            
+        }
+
+
         //----------------------------------------------------------------------------------------------------
         private void CheckCapacity()
         {  
@@ -249,6 +273,12 @@ namespace CustomList
             return ThirdList;
         }
 
-
+        public void RemoveAll()
+        {
+            for (int i = 0; i <= currentlyOccupiedArray; i++)
+            {
+               
+            }
+        }
     }
 }
