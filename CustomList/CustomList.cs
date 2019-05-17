@@ -107,7 +107,7 @@ namespace CustomList
         public void Zip(CustomList<T> SecondList)
         {
             CustomList<T> ThirdList = new CustomList<T>();                         
-                for (int i = 0; i <= (currentlyOccupiedArray & SecondList.currentlyOccupiedArray); i++)
+                for (int i = 0; i <= (currentlyOccupiedArray + SecondList.currentlyOccupiedArray); i++)
                 {
                     if (i <= currentlyOccupiedArray)
                     {
@@ -244,20 +244,20 @@ namespace CustomList
         }
 
         public static CustomList<T> operator +(CustomList<T> FirstList, CustomList<T> SecondList)
-        {
-            CustomList<T> ThirdList = new CustomList<T>();            
-            for (int i = 0; i < (FirstList.arrayCounter & SecondList.arrayCounter); i++)
+        {   
+            CustomList<T> ThirdList = new CustomList<T>();
+            FirstList.Length();
+            SecondList.Length();
+            for (int i = 0; i < (FirstList.lengthCounter + SecondList.lengthCounter); i++)
             {
                 if (i < FirstList.arrayCounter)
                 {
-                    ThirdList.Add(FirstList[i]);
-                    
+                    ThirdList.Add(FirstList[i]);                    
                 }
 
                 if (i < SecondList.arrayCounter)
                 {
-                    ThirdList.Add(SecondList[i]);
-                    
+                    ThirdList.Add(SecondList[i]);                   
                 }
             }
             return ThirdList;
@@ -290,5 +290,7 @@ namespace CustomList
                 items[i] = default;
             }
         }
+
+        
     }
 }

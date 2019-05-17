@@ -8,7 +8,7 @@ namespace CustomListTest
     public class ToStringTest
     {
         [TestMethod]
-        public void ToStringMimic_ConvertingDesiredValueToString_CheckingIfValueReturnedIsAString()
+        public void ToString_ConvertingDesiredValueToString_CheckingIfValueReturnedIsAString()
         {
             //arrange
             CustomList<int> shawnList = new CustomList<int>();
@@ -26,7 +26,7 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        public void ToStringMimic_ConvertingDesiredValueToString_CheckingIfStringValueReturnedIsAString()
+        public void ToString_ConvertingDesiredValueToString_CheckingIfStringValueReturnedIsAString()
         {
             //arrange
             CustomList<string> shawnList = new CustomList<string>();
@@ -43,7 +43,7 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        public void ToStringMimic_ConvertingDesiredValueToString_CheckingIfLargeValueListReturnedIsAString()
+        public void ToString_ConvertingDesiredValueToString_CheckingIfLargeValueListReturnedIsAString()
         {
             //arrange
             CustomList<int> shawnList = new CustomList<int>();
@@ -64,7 +64,7 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        public void ToStringMimic_ConvertingDesiredValueToString_CheckingIfStringValueIsReturnedIsAString()
+        public void ToString_ConvertingDesiredValueToString_CheckingIfStringValueIsReturnedIsAString()
         {
             //arrange
             CustomList<string> shawnList = new CustomList<string>();
@@ -80,7 +80,7 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        public void ToStringMimic_ConvertingDesiredValueToString_CheckingIfLargeValueReturnedIsAStringAfterRemoving()
+        public void ToString_ConvertingDesiredValueToString_CheckingIfLargeValueReturnedIsAStringAfterRemoving()
         {
             //arrange
             CustomList<int> shawnList = new CustomList<int>();

@@ -57,6 +57,7 @@
     <Compile Include="CountTest.cs" />
     <Compile Include="ToStringTest.cs" />
     <Compile Include="MinusOverloadTest.cs" />
+    <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

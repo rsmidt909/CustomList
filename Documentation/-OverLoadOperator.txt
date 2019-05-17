@@ -35,8 +35,8 @@ namespace CustomList
             //Arrange
             CustomList<int> List = new CustomList<int>();
 			CustomList<int> List2 = new CustomList<int>();           
-            int expected;
-            int actual;
+            string expected;
+            string actual;
 
 
             //Act
@@ -46,16 +46,16 @@ namespace CustomList
             List2.Add(4);
             List2.Add(6);
 			CustomList<int> List3 = List + List2
-            actual = Console.WriteLine(List3);
-            expected = (2)
+            actual = List3.ToString();
+            expected = ("2");
 
             //Assert
             Assert.AreEqual(expected, actual);
 
         }
 		
-		// Expected would log: 2
-		// Actual would log: 2
+		// Expected would log: "2"
+		// Actual would log: "2"
 --------------------------------------------------------------------------------
 
 Remarks:
