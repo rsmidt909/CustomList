@@ -5,7 +5,7 @@ using CustomList;
 namespace CustomListTest
 {
     [TestClass]
-    public class PlusOverrideTest
+    public class PlusOverloadTest
     {
         /*[TestMethod]
         public void TestMethod1()

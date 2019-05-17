@@ -18,7 +18,9 @@ namespace CustomList
             shawnList2.Add("16");
             shawnList.Add("20");
             shawnList2.Add("10");
-            CustomList<string> shawnList3 = shawnList + shawnList2;
+            shawnList2.Add("4");
+            shawnList.Add("16");
+            CustomList<string> shawnList3 = shawnList - shawnList2;
             Console.WriteLine();
             Console.ReadLine();
         }

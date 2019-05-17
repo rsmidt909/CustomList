@@ -13,32 +13,33 @@ namespace CustomList
         public T[] items2;
         bool capacityQuestion;
         int capacity;
-        int capacityCounter;
+
         int arrayCounter;
         int lengthCounter;
-        int items2Counter;
+        int items2Counter;        
         int arraySpecificCounter;
         string collection;
         public int Count { get { return arrayCounter; } }
         public int Capacity { get { return capacity; } }
-        private double[,] Thing1 = new double[4,4];
 
+        
 
 
         public CustomList()
         {
            capacityQuestion = false;
             capacity = 4;
-            capacityCounter = 0;
             arrayCounter = 0;
             items2Counter = 0;
             arraySpecificCounter = 0;
             collection = null;
+            
            
             
         }
         public int Length()
         {
+            lengthCounter = 0;
             foreach (T value in items)
             {                       
                     lengthCounter++;             
@@ -227,9 +228,27 @@ namespace CustomList
             }
             return ThirdList;
         }
-        
 
-        
+        public static CustomList<T> operator -(CustomList<T> FirstList, CustomList<T> SecondList)
+        {
+            CustomList<T> ThirdList = new CustomList<T>();
+
+            foreach(T value in FirstList)
+            {
+                ThirdList.Add(value);
+                for (int i = 0; i <= (SecondList.arrayCounter-1); i++) { 
+
+                    if (value.Equals(SecondList[i])){
+                        ThirdList.Remove(value);
+                        break;
+                    }
+            
+                 }
+                
+            }
+            return ThirdList;
+        }
+
 
     }
 }

@@ -126,12 +126,12 @@ namespace CustomListTest
         {
             //arrange
             CustomList<int> shawnList = new CustomList<int>();
-            int value;
+            
             int expected;
             int actual;
 
             //act
-            value = 5;
+            
             shawnList.Add(5);
             shawnList.Add(5);
             shawnList.Add(5);
@@ -149,12 +149,12 @@ namespace CustomListTest
         {
             //arrange
             CustomList<int> shawnList = new CustomList<int>();
-            int value;
+            
             int expected;
             int actual;
 
             //act
-            value = 5;
+           
             shawnList.Add(5);
             shawnList.Add(5);
             shawnList.Add(5);
@@ -172,12 +172,12 @@ namespace CustomListTest
         {
             //arrange
             CustomList<int> shawnList = new CustomList<int>();
-            int value;
+            
             int expected;
             int actual;
 
             //act
-            value = 5;
+            
             shawnList.Add(5);
             shawnList.Add(5);
             shawnList.Add(5);
