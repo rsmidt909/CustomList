@@ -13,15 +13,15 @@ namespace CustomList
         public T[] items2;
         bool capacityQuestion;
         int capacity;
-
         int arrayCounter;
         int lengthCounter;
         int items2Counter;        
         int arraySpecificCounter;
         string collection;
         public int Count { get { return arrayCounter; } }
+        public int currentlyOccupiedArray { get { return arrayCounter-1; } }
         public int Capacity { get { return capacity; } }
-
+        int counter;
         
 
 
@@ -203,7 +203,7 @@ namespace CustomList
 
         public IEnumerator GetEnumerator()
         {
-            for(int index = 0; index <items.Length; index++)
+            for(int index = 0; index < currentlyOccupiedArray; index++)
             {
                 yield return items[index];
             }
@@ -236,7 +236,7 @@ namespace CustomList
             foreach(T value in FirstList)
             {
                 ThirdList.Add(value);
-                for (int i = 0; i <= (SecondList.arrayCounter-1); i++) { 
+                for (int i = 0; i <= (SecondList.currentlyOccupiedArray); i++) { 
 
                     if (value.Equals(SecondList[i])){
                         ThirdList.Remove(value);
