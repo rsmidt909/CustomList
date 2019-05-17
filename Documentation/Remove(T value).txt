@@ -1,0 +1,57 @@
+CustomList<T>.Remove(T) Method
+
+public void Remove(T value);
+
+Paramters:
+T value
+The object to remove from the CustomList<T>. 
+
+Returns:
+CustomList<T> with first value matching given value removed from list.
+
+Implements:
+Remove(T)
+
+
+The following example demonstates how to remove a simple business object from CustomList<T>
+
+Example:---------------------------------------------
+
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CustomList;
+
+namespace CustomList
+{
+    
+    public class RemoveExample
+    {
+        
+        public void Remove_RemovingItemFromArrayList_DoesItemGetRemoved()
+        {
+            //Arrange
+            CustomList<int> List = new CustomList<int>();
+            int value = 15;
+            int expected;
+            int actual;
+
+
+            //Act
+            shawnList.Add(value);
+            shawnList.Remove(value);
+            actual = List[0];
+            expected = default;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+		
+		// Expected would log: 0
+		// Actual would log: 0
+--------------------------------------------------------------------------------
+
+Remarks:
+The Remove(T value) method removes only the first instance of the value in the List.
+After removal, the method will then shift the value from the next array, back into the 
+now empty array.

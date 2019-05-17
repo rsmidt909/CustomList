@@ -1,0 +1,59 @@
+CustomList<T>.Add(T) Method
+
+public void Add(T value);
+
+Paramters:
+T value
+The object to Add to the CustomList<T>. 
+
+Returns:
+CustomList<T> with the value at the end of the List.
+
+Implements:
+Add(T)
+
+
+The following example demonstates how to add a simple business object to CustomList<T>
+
+Example:---------------------------------------------
+
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CustomList;
+
+namespace CustomList
+{
+    
+    public class RemoveExample
+    {
+        
+        public void Add_AddingItemToArrayList_DoesIntGetAdded()
+        {
+
+            //Arrange
+            CustomList<int> List = new CustomList<int>();
+            int value = 26;
+            int expected;
+            int actual;
+
+
+            //Act
+            shawnList.Add(value);
+            actual = List[0];
+            expected = 26;
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+
+        }
+		
+		// Expected would log: 26
+		// Actual would log: 26
+--------------------------------------------------------------------------------
+
+Remarks:
+The Add(T value) method adds the given value, to the end of the List.
+The Add(T value) method increases the array size of the list, if the capacity
+of the array ever reaches the max.
